@@ -718,7 +718,7 @@ img {
     top: 50px;
     left: 50px;
   }
-}
+
 
 /* Tablet Styles */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1010,13 +1010,34 @@ img {
   }
   
   /* Competitive Advantage Mobile */
+  .competitive-section {
+    padding: 2rem 0;
+  }
+  
   .advantages-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .advantage-item {
+    padding: 1rem;
+    margin: 0;
   }
   
   .advantage-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .advantage-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .advantage-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
   
   /* Services Timeline Mobile - Simple Layout */
