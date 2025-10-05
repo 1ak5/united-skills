@@ -26,6 +26,28 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Emoji Icons - Netflix Dark Red Filter */
+.skill-badge,
+.service-icon,
+.project-icon,
+.flow-icon,
+.card-icon,
+.advantage-icon,
+.contact-item .icon,
+.trust-badge {
+  filter: grayscale(40%) brightness(0.8) contrast(2) sepia(0.8) hue-rotate(320deg) saturate(1);
+  color: #E50914 !important;
+ 
+}
+
+/* Premium Main Heading Style */
+.display {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 999;
+  
+  font-style: normal;
+}
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
@@ -441,32 +463,32 @@ img {
   top: 58%;
   right: 0px;
   
-  animation-delay: 0.5s;
+  animation-delay: 0s;
 }
 
 .skill-3 {
   bottom:-30px;
   right: 120px;
-  animation-delay: 1s;
+  animation-delay: 0s;
 }
 
 .skill-4 {
   bottom: 70px;
   left: 0px;
-  animation-delay: 1.5s;
+  animation-delay: 0s;
 }
 
 .skill-5 {
   top: 20%;
   left: 75px;
   
-  animation-delay: 2s;
+  animation-delay: 0s;
 }
 
 .skill-6 {
   top: 60px;
   left: 165px;
-  animation-delay: 2.5s;
+  animation-delay: 0s;
 }
 
 .connection-line {
@@ -521,6 +543,10 @@ img {
   width: 50px;
   transform: translateY(-50%) rotate(-45deg);
   animation-delay: 1.2s;
+}
+
+.lead{
+  font-family: "Luckiest Guy", cursive;
 }
 
 @media (min-width: 960px) {
@@ -604,32 +630,32 @@ img {
   }
   
   .skill-1 {
-    top: 5px;
+    top: -12px;
   }
   
   .skill-2 {
-    top: 50%;
-    right: 5px;
+    top: 25%;
+    right: 50px;
   }
   
   .skill-3 {
-    bottom: 5px;
-    right: 40px;
+    bottom: 55px;
+    right: 10px;
   }
   
   .skill-4 {
-    bottom: 5px;
-    left: 40px;
+    bottom: -20px;
+    left: 80px;
   }
   
   .skill-5 {
-    top: 50%;
-    left: 5px;
+    top: 55%;
+    left: 10px;
   }
   
   .skill-6 {
-    top: 40px;
-    left: 20px;
+    top: 50px;
+    left: 50px;
   }
 }
 
@@ -1617,13 +1643,120 @@ img {
 }
 
 @media (max-width: 768px) {
-  .why-now-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  /* Why Now Section - Clean Mobile Design with Separation (No Boxes) */
+  .why-now-section {
+    padding: 2.5rem 0;
   }
   
-  .why-now-card {
-    padding: 1rem;
+  .why-now-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .content-item.why-now-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    box-shadow: none;
+    position: relative;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Add subtle divider lines between items */
+  .content-item.why-now-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.3), transparent);
+    margin: 0 2rem;
+  }
+  
+  .content-item.why-now-item::before {
+    display: none;
+  }
+  
+  .content-item.why-now-item:hover {
+    transform: none;
+  }
+  
+  .content-item.why-now-item .card-icon {
+    font-size: 3rem;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1));
+    border: 2px solid rgba(78, 205, 196, 0.2);
+    border-radius: 50%;
+    margin: 0;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  }
+  
+  .content-item.why-now-item:hover .card-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    border-color: rgba(78, 205, 196, 0.4);
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(255, 107, 107, 0.2));
+  }
+  
+  .content-item.why-now-item .content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .content-item.why-now-item .content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative;
+  }
+  
+  .content-item.why-now-item .content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--coral), var(--turq));
+    border-radius: 1px;
+  }
+  
+  .content-item.why-now-item .content p {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: var(--muted);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  
+  .content-item.why-now-item .stat-highlight {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1));
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    display: inline-block;
+    line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -2466,7 +2599,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   font-size: 0.75rem;
-  color: var(--muted);
+  color: #ffffff !important;
   font-weight: 500;
 }
 
